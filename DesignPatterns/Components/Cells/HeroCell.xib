@@ -34,7 +34,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="n7Q-eR-zXh" firstAttribute="centerY" secondItem="G3q-ch-OTY" secondAttribute="centerY" id="1lF-h3-oz7"/>
                     <constraint firstItem="n7Q-eR-zXh" firstAttribute="leading" secondItem="G3q-ch-OTY" secondAttribute="leading" constant="8" id="HjG-Ne-LX6"/>

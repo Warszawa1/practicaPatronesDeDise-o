@@ -40,7 +40,7 @@ final class HeroDetailViewController: UIViewController {
         title = viewModel.getTitle()
         view.backgroundColor = .white
         
-        // Set up scroll view
+        // Set up la vista scroll
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -50,7 +50,7 @@ final class HeroDetailViewController: UIViewController {
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        // Create a card container
+        // Crear el container
         let cardView = UIView()
         cardView.backgroundColor = .white
         cardView.layer.cornerRadius = 8
@@ -58,6 +58,7 @@ final class HeroDetailViewController: UIViewController {
         cardView.layer.shadowOffset = CGSize(width: 0, height: 2)
         cardView.layer.shadowRadius = 4
         cardView.layer.shadowOpacity = 0.1
+        cardView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         cardView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(cardView)
         
@@ -73,34 +74,33 @@ final class HeroDetailViewController: UIViewController {
         // Set up image view inside card
         cardView.addSubview(heroImageView)
         heroImageView.translatesAutoresizingMaskIntoConstraints = false
-        heroImageView.contentMode = .scaleAspectFit
+        heroImageView.contentMode = .scaleAspectFill
         heroImageView.clipsToBounds = true
         heroImageView.layer.cornerRadius = 8
-        heroImageView.backgroundColor = .lightGray.withAlphaComponent(0.3)
         NSLayoutConstraint.activate([
-            heroImageView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16),
-            heroImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
-            heroImageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16),
+            heroImageView.topAnchor.constraint(equalTo: cardView.topAnchor),
+            heroImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+            heroImageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
             heroImageView.heightAnchor.constraint(equalToConstant: 240)
         ])
         
         // Set up name label inside card
         cardView.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 26)
         nameLabel.textAlignment = .center
         nameLabel.numberOfLines = 0
         nameLabel.textColor = .black
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: heroImageView.bottomAnchor, constant: 24),
-            nameLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
-            nameLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16)
+            nameLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -20)
         ])
         
         // Set up description label inside card
         cardView.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.font = UIFont.systemFont(ofSize: 16)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 18)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textColor = .darkGray
         NSLayoutConstraint.activate([
@@ -115,7 +115,7 @@ final class HeroDetailViewController: UIViewController {
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
         
-        // Use the AsyncImage's setImage method
+        // AsyncImage's setImage method
         heroImageView.setImage(viewModel.photoURL)
     }
 }
