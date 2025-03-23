@@ -16,10 +16,10 @@ struct GetHeroesAPIRequest: HTTPRequest {
     let path: String = "/api/heroes/all"
     let body: (any Encodable)?
     
-    init(name: String?) {
+    init(name: String = "") {
         // funcion de alto nivel que nos dan los opcionales
         //solo se llama cuando hay un valor dentro de name
-        body = name.map { RequestDTO(name: $0) }
+        body = RequestDTO(name: name)
           // easier version*
 //        if let name {
 //            body = RequestDTO(name: name)

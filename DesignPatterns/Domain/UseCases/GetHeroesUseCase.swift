@@ -13,7 +13,7 @@ protocol GetHeroesUseCaseProtocol {
 
 final class GetHeroesUseCase: GetHeroesUseCaseProtocol {
     func run(completion: @escaping (Result<[HeroModel], Error>) -> Void) {
-        GetHeroesAPIRequest(name: nil)
+        GetHeroesAPIRequest()
             .perform { result in
                 // Con concurrencia
                 do {
