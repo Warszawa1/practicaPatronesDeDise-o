@@ -6,9 +6,9 @@ DragonBall Heroes es una aplicación iOS que permite a los usuarios explorar los
 
 <table>
   <tr>
-    <td><img src="screenshots/login.png" width="400" alt="Login Screen"><br><em>Login</em></td>
-    <td><img src="screenshots/heroes.png" width="400" alt="Heroes List"><br><em>Lista de heroes</em></td>
-    <td><img src="screenshots/detail.png" width="400" alt="Hero Detail"><br><em>Detalles del heroe</em></td>
+    <td><img src="login.png" width="400" alt="Login Screen"><br><em>Login</em></td>
+    <td><img src="heroes.png" width="400" alt="Heroes List"><br><em>Lista de heroes</em></td>
+    <td><img src="detail.png" width="400" alt="Hero Detail"><br><em>Detalles del heroe</em></td>
   </tr>
 </table>
 
