@@ -27,16 +27,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XrV-Gd-V6w">
-                    <rect key="frame" x="31" y="390" width="340" height="122.33333333333337"/>
+                    <rect key="frame" x="31" y="387.33333333333331" width="340" height="127.33333333333331"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-DN-KIL">
                             <rect key="frame" x="0.0" y="0.0" width="340" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <textInputTraits key="textInputTraits" textContentType="username"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-Jw-7yM">
                             <rect key="frame" x="0.0" y="34" width="340" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                         </textField>
                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GX1-wk-AKb">
@@ -49,10 +49,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-GN-P7W">
-                            <rect key="frame" x="0.0" y="88" width="340" height="34.333333333333343"/>
+                            <rect key="frame" x="0.0" y="88" width="340" height="39.333333333333343"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <buttonConfiguration key="configuration" style="plain" title="Continuar">
-                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="21"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="Wrv-lD-bOZ"/>

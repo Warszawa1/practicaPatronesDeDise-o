@@ -27,6 +27,7 @@ class HeroesListViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         print(">>> HeroesListViewController viewDidLoad called")
         super.viewDidLoad()
+        title = "Heroes"
         bind()
         viewModel.loadHeroes()
         tableView.delegate = self

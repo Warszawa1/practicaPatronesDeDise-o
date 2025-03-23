@@ -23,17 +23,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ort-Bf-p6I">
-                    <rect key="frame" x="141.66666666666666" y="405.33333333333331" width="110" height="66.666666666666686"/>
+                    <rect key="frame" x="141" y="405.33333333333331" width="111.33333333333331" height="66.666666666666686"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AMB-Mu-hl4">
-                            <rect key="frame" x="34.333333333333329" y="0.0" width="41.333333333333329" height="20.333333333333332"/>
+                            <rect key="frame" x="27.666666666666671" y="0.0" width="56" height="20.333333333333332"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3z-jG-ZPP">
-                            <rect key="frame" x="17.333333333333343" y="32.333333333333371" width="75" height="34.333333333333343"/>
+                            <rect key="frame" x="18" y="32.333333333333371" width="75" height="34.333333333333343"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             <connections>
