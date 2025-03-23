@@ -78,8 +78,8 @@
             filePath = "DesignPatterns/Networking/APISession.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "request(apiRequest:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3228D4FE-F7BD-4480-B05A-FC72EDAFF455"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesignPatterns/Components/Views/AsyncImage.swift"
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DD71659D-E9FC-43A9-8E1D-E2F0EA2018F6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesignPatterns/Components/Cells/HeroCell.swift"
@@ -114,92 +114,70 @@
             endingLineNumber = "14"
             landmarkName = "HeroCell"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "DD71659D-E9FC-43A9-8E1D-E2F0EA2018F6 - 597e43671b977e3c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DesignPatterns.HeroCell.avatarView.getter : Swift.Optional&lt;DesignPatterns.AsyncImage&gt;"
-                  moduleName = "DesignPatterns.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ireav/Desktop/iOSdevelopment/DesignPatterns/DesignPatterns/Components/Cells/HeroCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "DD71659D-E9FC-43A9-8E1D-E2F0EA2018F6 - dd2fd62e4369c228"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DesignPatterns.HeroCell.avatarView.setter : Swift.Optional&lt;DesignPatterns.AsyncImage&gt;"
-                  moduleName = "DesignPatterns.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ireav/Desktop/iOSdevelopment/DesignPatterns/DesignPatterns/Components/Cells/HeroCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "DD71659D-E9FC-43A9-8E1D-E2F0EA2018F6 - 14ef0a2afe99ff6f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DesignPatterns.HeroCell.avatarView.modify : Swift.Optional&lt;DesignPatterns.AsyncImage&gt;"
-                  moduleName = "DesignPatterns.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ireav/Desktop/iOSdevelopment/DesignPatterns/DesignPatterns/Components/Cells/HeroCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14">
-               </Location>
-               <Location
-                  uuid = "DD71659D-E9FC-43A9-8E1D-E2F0EA2018F6 - ca3f6954f16df7c7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DesignPatterns.HeroCell.avatarView.modify : Swift.Optional&lt;DesignPatterns.AsyncImage&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "DesignPatterns.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "DD71659D-E9FC-43A9-8E1D-E2F0EA2018F6 - e650131543b71e00"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DesignPatterns.HeroCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; DesignPatterns.HeroCell"
-                  moduleName = "DesignPatterns.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ireav/Desktop/iOSdevelopment/DesignPatterns/DesignPatterns/Components/Cells/HeroCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14">
-               </Location>
-               <Location
-                  uuid = "DD71659D-E9FC-43A9-8E1D-E2F0EA2018F6 - fad8d85c344ad20"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DesignPatterns.HeroCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;DesignPatterns.HeroCell&gt;"
-                  moduleName = "DesignPatterns.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ireav/Desktop/iOSdevelopment/DesignPatterns/DesignPatterns/Components/Cells/HeroCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7EB5A18-6E98-4A64-88A8-E015E2EC72A6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesignPatterns/Domain/UseCases/GetHeroesUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "GetHeroesUseCaseProtocol"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "731EE5A0-9D09-433A-956A-0DF46456DE64"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesignPatternsTests/Presentation/HeroesListViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "testWhenUseCaseFailsStateIsError()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6896A3A-72AE-4185-A188-69DFEDDFF22F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesignPatternsTests/Presentation/HeroesListViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "run(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2434F1ED-72D4-4ED0-B920-7C60506A5E1E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesignPatternsTests/Presentation/HeroesListViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "testWhenUseCaseFailsStateIsError()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -25,11 +25,18 @@ final class AuthenticationAPIInterceptor: APIRequestInterceptor {
     }
     
     func intercept(_ request: URLRequest) -> URLRequest {
+        print(">>> Intercepting request to: \(request.url?.absoluteString ?? "unknown")")
+        
         guard let session = dataSource.getSession() else {
+            print(">>> No session data available!")
             return request
         }
+        
+        let token = String(decoding: session, as: UTF8.self)
+        print(">>> Adding token: \(token)")
+        
         var copy = request
-        copy.setValue("Bearer \(String(decoding: session, as: UTF8.self))", forHTTPHeaderField: "Authorization")
+        copy.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return copy
     }
 }

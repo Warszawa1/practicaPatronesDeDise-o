@@ -13,7 +13,7 @@ struct GetHeroesAPIRequest: HTTPRequest {
     typealias Response = [HeroDTO]
     
     let method: Methods = .POST
-    let path: String = "/api/heroes/all"
+    let path: String = "/api/heros/all"
     let body: (any Encodable)?
     
     init(name: String = "") {

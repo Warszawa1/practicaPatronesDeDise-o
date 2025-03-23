@@ -14,7 +14,7 @@ struct HeroDTO: Codable {
     let photo: String
     let favorite: Bool
     
-    enum CodinKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case identifier = "id"
         case name
         case description

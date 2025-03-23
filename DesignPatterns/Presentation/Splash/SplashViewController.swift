@@ -34,7 +34,6 @@ final class SplashViewController: UIViewController {
         viewModel.onStateChange.bind { [weak self] state in
             switch state {
             case .loading:
-                print("Loading, yay!")
                 self?.setAnimation(true)
             case .error:
                 print("finished")

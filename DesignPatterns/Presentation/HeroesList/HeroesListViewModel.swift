@@ -25,12 +25,15 @@ final class HeroesListViewModel {
     }
     
     func loadHeroes() {
+        print(">>> Starting to load heroes")
         onStateChanged.update(.loading)
         useCase.run { [weak self] result in
             do {
                 self?.heroes = try result.get()
+                print(">>> Heroes loaded successfully with \(self?.heroes.count ?? 0) heroes")
                 self?.onStateChanged.update(.success)
             } catch {
+                print(">>> Error loading heroes: \(error)")
                 self?.onStateChanged.update(.error(reason: "Datos no disponibles"))
             }
         }

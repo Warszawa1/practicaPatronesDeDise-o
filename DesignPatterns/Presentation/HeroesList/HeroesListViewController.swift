@@ -25,11 +25,18 @@ class HeroesListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func viewDidLoad() {
+        print(">>> HeroesListViewController viewDidLoad called")
         super.viewDidLoad()
         bind()
         viewModel.loadHeroes()
         tableView.delegate = self
         tableView.dataSource = self
+        // Add this to viewDidLoad
+        if let sessionData = SessionDataSource.shared.getSession() {
+            print(">>> Session exists: \(String(decoding: sessionData, as: UTF8.self))")
+        } else {
+            print(">>> No session exists! Need to login first.")
+        }
         tableView.register(UINib(nibName: "HeroCell", bundle: Bundle(for: type(of: self))),
                            forCellReuseIdentifier: HeroCell.reuseIdentifier)
     }
@@ -40,13 +47,18 @@ class HeroesListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // MARK: - Binding
     private func bind() {
+        print(">>> Setting up binding")
         viewModel.onStateChanged.bind { [weak self] state in
+            print(">>> State changed to: \(state)")
             switch state {
             case .error(reason: let reason):
+                print(">>> Error state: \(reason)")
                 self?.renderError(reason)
             case .loading:
+                print(">>> Loading state")
                 self?.renderLoading()
             case .success:
+                print(">>> Success state with \(self?.viewModel.heroes.count ?? 0) heroes")
                 self?.renderSuccess()
             }
         }
@@ -65,6 +77,8 @@ class HeroesListViewController: UIViewController, UITableViewDelegate, UITableVi
     private func renderSuccess() {
         errorStackView.isHidden = true
         activityIndicator.stopAnimating()
+        print("Heroes loaded: \(viewModel.heroes.count)")
+
         tableView.reloadData()
     }
     
@@ -82,12 +96,17 @@ class HeroesListViewController: UIViewController, UITableViewDelegate, UITableVi
         if let cell = cell as? HeroCell {
             let hero = viewModel.heroes[indexPath.row]
             cell.setData(name: hero.name, photo: hero.photo)
+            cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .white // Temporary to see cells
         }
         return cell ?? UITableViewCell()
     }
+    
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // Navigate to detail ***********************************************************************************************************************
+    // Navigate to detail ***
+        let selectedHero = viewModel.heroes[indexPath.row]
+        let detailVC = HeroDetailBuilder.build(with: selectedHero)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 

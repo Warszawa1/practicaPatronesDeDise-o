@@ -27,6 +27,18 @@ struct APISession: APISessionContract {
         do {
             var request = try apiRequest.getRequest()
             requestInterceptors.forEach { request = $0.intercept(request)}
+            
+            // Debug the full request
+            print(">>> FULL REQUEST DEBUG:")
+            print(">>> URL: \(request.url?.absoluteString ?? "nil")")
+            print(">>> Method: \(request.httpMethod ?? "nil")")
+            print(">>> Headers: \(request.allHTTPHeaderFields ?? [:])")
+            if let body = request.httpBody, let bodyString = String(data: body, encoding: .utf8) {
+                print(">>> Body: \(bodyString)")
+            } else {
+                print(">>> Body: nil or not string")
+            }
+
             // Datatask no inicia la operación, la hace disponible para que se use en algún momento
             session.dataTask(with: request) { data, response, error in
                 if let error {

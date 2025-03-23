@@ -12,8 +12,11 @@ final class AsyncImage: UIImageView {
 
     // Sobrecarga de métodos, para el mismo método puedo hacer difetentes parametrizaciones
     func setImage(_ image: String) {
+        print(">>> Setting image from URL: \(image)")
         if let url = URL(string: image) {
             self.setImage(url)
+        } else {
+            print(">>> Invalid URL: \(image)")
         }
     }
     
