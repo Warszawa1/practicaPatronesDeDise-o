@@ -17,6 +17,8 @@ final class HeroDetailViewController: UIViewController {
     private let heroImageView = AsyncImage()  // Use AsyncImage instead of UIImageView
     private let nameLabel = UILabel()
     private let descriptionLabel = UILabel()
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
+    private let errorLabel = UILabel()
     
     // MARK: - Initialization
     init(viewModel: HeroDetailViewModel) {
@@ -32,13 +34,70 @@ final class HeroDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        configureWithViewModel()
+        bind()
+        viewModel.loadHeroDetail()
+    }
+    
+    // MARK: - Binding
+    private func bind() {
+        viewModel.onStateChanged.bind { [weak self] state in
+            DispatchQueue.main.async {
+                switch state {
+                case .loading:
+                    self?.showLoading(true)
+                case .loaded:
+                    self?.updateUI()
+                    self?.showLoading(false)
+                case .error(let message):
+                    self?.showError(message)
+                }
+            }
+        }
+    }
+    
+    private func showLoading(_ isLoading: Bool) {
+        if isLoading {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        scrollView.isHidden = isLoading
+        errorLabel.isHidden = true
+    }
+    
+    private func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
+        scrollView.isHidden = true
+        activityIndicator.stopAnimating()
+    }
+    
+    private func updateUI() {
+        title = viewModel.getTitle()
+        nameLabel.text = viewModel.name
+        descriptionLabel.text = viewModel.description
+        
+        if !viewModel.photoURL.isEmpty {
+            heroImageView.setImage(viewModel.photoURL)
+        }
     }
     
     // MARK: - UI Setup
     private func setupUI() {
-        title = viewModel.getTitle()
         view.backgroundColor = .white
+        
+        // Activity indicator setup
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
+        
+        // Error label setup
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        errorLabel.textColor = .red
+        errorLabel.textAlignment = .center
+        errorLabel.numberOfLines = 0
+        errorLabel.isHidden = true
+        view.addSubview(errorLabel)
         
         // Set up la vista scroll
         view.addSubview(scrollView)
@@ -47,7 +106,18 @@ final class HeroDetailViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            // Activity indicator constraints
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            // Error label constraints
+            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+
         ])
         
         // Crear el container

@@ -8,8 +8,8 @@
 import UIKit
 
 
-final class SplashBuilder {
-    func build() -> UIViewController {
+class SplashBuilder {
+    static func build() -> SplashViewController {
         let viewModel = SplashViewModel()
         return SplashViewController(viewModel: viewModel)
     }

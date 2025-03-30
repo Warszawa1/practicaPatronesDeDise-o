@@ -7,23 +7,22 @@
 
 import Foundation
 
-enum SplashState: Equatable{
-    case loading
-    
-    case error
-    
-    case ready
-}
-
 final class SplashViewModel {
-    var onStateChange = Binding<SplashState>()
+    enum State: Equatable {
+        case loading
+        case ready
+        case error(String)
+    }
+    
+    let onStateChanged = Binding<State>()
     
     func load() {
-        onStateChange.update(.loading)
-        DispatchQueue.global().asyncAfter(deadline: .now() + 3 ) { [weak self] in
-                self?.onStateChange.update(.ready)
+        onStateChanged.update(.loading)
+        
+        // Simulate loading time to match animation duration
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) { [weak self] in
+            self?.onStateChanged.update(.ready)
         }
     }
 }
-
 
